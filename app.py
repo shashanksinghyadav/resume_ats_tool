@@ -20,7 +20,9 @@ st.info("📌 Upload a PDF resume and paste any Job Description to begin.")
 
 uploaded_file = st.file_uploader("Upload Resume (PDF)", type=["pdf"])
 jd_text = st.text_area("Paste Job Description")
-
+resume_keywords={}
+score=0
+jd_keywords={}
 if uploaded_file and jd_text:
     with st.spinner("Analyzing resume..."):
         resume_text = extract_text_from_pdf(uploaded_file)
