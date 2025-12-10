@@ -23,6 +23,8 @@ jd_text = st.text_area("Paste Job Description")
 resume_keywords={}
 score=0
 jd_keywords={}
+missing={}
+
 if uploaded_file and jd_text:
     with st.spinner("Analyzing resume..."):
         resume_text = extract_text_from_pdf(uploaded_file)
